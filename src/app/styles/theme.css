@@ -1,4 +1,17 @@
 :root {
-  --bg-color: #fff;
-  --text-dark: #000;
+  --bg-color: #fff8e2;
+  --text-dark: var(--dark);
+
+  --text-description: #535353;
+
+  --button-default: #4b6dc2;
+  --button-primary: #54ac4f;
+  --button-danger: #ff8082;
+  --button-text: var(--white);
+  --button-radius: 8px;
+  --button-transition: all 0.25s ease;
+  --font-normal: 600;
+
+  --white: #fff;
+  --dark: #000;
 }

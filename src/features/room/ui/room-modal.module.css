@@ -1,0 +1,16 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.input_description {
+  font-weight: 600;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px !important;
+  margin-bottom: 16px;
+}

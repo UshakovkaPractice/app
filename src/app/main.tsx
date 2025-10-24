@@ -1,8 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import "@app/styles/index.css";
 import { Core } from "./core";
-
-import "./styles/index.css";
 
 const root = document.querySelector("#root");
 
