@@ -7,7 +7,12 @@ import type { ModalProps } from "./modal.types";
 export const Modal: FC<ModalProps> & {
   Header: FC<{ title?: string; onClose?: () => void; className?: string }>;
   Content: FC<{ children: ReactNode; className?: string }>;
-  Footer: FC<{ children: ReactNode; centered?: boolean; className?: string }>;
+  Footer: FC<{
+    children: ReactNode;
+    centered?: boolean;
+    className?: string;
+    fullWidth?: boolean;
+  }>;
 } = ({ open, onClose, children }) => {
   return (
     <AnimatePresence>
@@ -50,9 +55,9 @@ Modal.Content = ({ children, className }) => (
   <div className={`${styles.content} ${className || ""}`}>{children}</div>
 );
 
-Modal.Footer = ({ children, centered, className }) => (
+Modal.Footer = ({ children, centered, fullWidth, className }) => (
   <div
-    className={`${styles.footer} ${centered ? styles.centered : ""} ${className || ""}`}
+    className={`${styles.footer} ${fullWidth ? styles.fullWidth : ""} ${centered ? styles.centered : ""} ${className || ""}`}
   >
     {children}
   </div>

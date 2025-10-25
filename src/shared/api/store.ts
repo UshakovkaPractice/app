@@ -2,7 +2,7 @@ import { roomSlice } from "@entities/room/models";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 export const rootReducer = combineReducers({
-  roomSlice,
+  [roomSlice.reducerPath]: roomSlice.reducer,
 });
 
 export const store = configureStore({

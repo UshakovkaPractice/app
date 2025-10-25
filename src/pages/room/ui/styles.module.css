@@ -1,0 +1,92 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  height: 100vh;
+}
+
+.right_side {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--bg-muted);
+}
+
+.participants {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.participantCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 6px;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  gap: 12px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.avatar {
+  border-radius: 16px;
+  width: 64px;
+  height: 64px;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.role {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.status {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+}
+
+.chat {
+  background: var(--card-bg);
+  padding: 12px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat .title {
+  font-weight: 500;
+  color: var(--text-muted);
+}

@@ -1,17 +1,41 @@
 :root {
-  --bg-color: #fff8e2;
-  --text-dark: var(--dark);
+  --bg-color: #ffffff;
+  --bg-muted: #f6f6f6;
+  --surface: #ffffff;
+  --card-bg: #fbfbfb;
 
-  --text-description: #535353;
+  --text-dark: #0b0b0c;
+  --text-regular: #232325;
+  --text-muted: #6e6e6e;
+  --text-inverse: #ffffff;
 
-  --button-default: #4b6dc2;
-  --button-primary: #54ac4f;
-  --button-danger: #ff8082;
-  --button-text: var(--white);
-  --button-radius: 8px;
-  --button-transition: all 0.25s ease;
+  --border: #e6e6e8;
+  --divider: rgba(11, 11, 12, 0.06);
+  --glass-overlay: rgba(11, 11, 12, 0.03);
+
+  --button-primary-bg: #0b0b0c;
+  --button-primary: #0b0b0c;
+  --button-primary-text: #ffffff;
+  --button-outline-bg: transparent;
+  --button-outline-border: #0b0b0c;
+  --button-ghost-text: #232325;
+  --button-muted-bg: #f2f2f3;
+
+  --focus-ring: 0 0 0 4px rgba(11, 11, 12, 0.06);
+  --shadow-1: 0 6px 18px rgba(11, 11, 12, 0.06);
+  --shadow-2: 0 10px 30px rgba(11, 11, 12, 0.08);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --button-radius: var(--radius-md);
+  --button-transition: all 0.22s ease;
   --font-normal: 600;
 
-  --white: #fff;
-  --dark: #000;
+  --dark-bg: #0b0b0c;
+  --dark-surface: #0f0f10;
+  --dark-text: #f6f6f5;
+  --dark-muted: #a8a8a8;
+  --dark-border: rgba(255, 255, 255, 0.06);
 }

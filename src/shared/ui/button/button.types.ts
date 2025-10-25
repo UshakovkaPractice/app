@@ -1,4 +1,10 @@
-export type ButtonVariant = "default" | "primary" | "secondary" | "danger";
+export type ButtonVariant =
+  | "default"
+  | "primary"
+  | "secondary"
+  | "danger"
+  | "outline"
+  | "ghost";
 export type ButtonSize = "small" | "medium" | "large";
 
 export interface ButtonProps {

@@ -10,6 +10,10 @@
   padding: 10px 20px;
   border-radius: var(--button-radius);
   font-size: 16px;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn.small {
@@ -29,31 +33,74 @@
 
 .btn.default {
   background-color: var(--button-default);
+  color: var(--button-default-text);
+  border: 1px solid var(--border);
 }
 
 .btn.default:hover {
-  background-color: color-mix(in srgb, var(--button-default) 85%, #ffffff);
+  background-color: var(--button-muted-bg);
+  transform: translateY(-1px);
 }
 
 .btn.primary {
-  background-color: var(--button-primary);
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+  box-shadow: var(--shadow-1);
 }
 
 .btn.primary:hover {
-  background-color: color-mix(in srgb, var(--button-primary) 85%, #ffffff);
+  background-color: rgba(11, 11, 12, 0.85);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-2);
+}
+
+.btn.secondary {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--text-inverse);
+  border: none;
+  box-shadow: none;
+}
+
+.btn.secondary:hover {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .btn.danger {
   background-color: var(--button-danger);
+  color: var(--button-text);
+  box-shadow: var(--shadow-1);
 }
 
 .btn.danger:hover {
-  background-color: color-mix(in srgb, var(--button-danger) 85%, #ffffff);
+  background-color: color-mix(in srgb, var(--button-danger) 88%, #ffffff 12%);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-2);
 }
 
-/* 🚫 Disabled */
+.btn.outline {
+  background: var(--button-outline-bg);
+  color: var(--button-primary-text);
+  border: 1px solid var(--button-outline-border);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--button-ghost-text);
+  border: none;
+}
+
+.btn:focus {
+  box-shadow: var(--focus-ring);
+}
+
+.btn:active {
+  transform: translateY(0);
+  transition: none;
+}
+
 .btn:disabled {
-  opacity: 0.6;
+  opacity: 0.55;
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
 }

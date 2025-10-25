@@ -1,0 +1,54 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-normal);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  font-size: 12px;
+  line-height: 1;
+  transition: var(--button-transition);
+  user-select: none;
+}
+
+/* Размеры */
+.small {
+  padding: 2px 6px;
+  font-size: 10px;
+}
+
+.medium {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+.large {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+/* Варианты */
+.default {
+  background-color: var(--bg-muted);
+  color: var(--text-regular);
+}
+
+.primary {
+  background-color: var(--button-primary-bg);
+  color: var(--button-primary-text);
+}
+
+.success {
+  background-color: #27ae60;
+  color: var(--text-inverse);
+}
+
+.warning {
+  background-color: #f39c12;
+  color: var(--text-inverse);
+}
+
+.danger {
+  background-color: #e74c3c;
+  color: var(--text-inverse);
+}

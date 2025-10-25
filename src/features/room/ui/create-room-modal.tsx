@@ -17,7 +17,7 @@ export const CreateRoomModal: FC<ICreateRoomModalProps> = ({ state }) => {
       <Modal.Content className={styles.content}>
         <div className={styles.item}>
           <span className={styles.input_description}>Название комнаты:</span>
-          <Input size="small" placeholder="Название комнаты" />
+          <Input placeholder="Название комнаты" />
         </div>
         <div className={styles.item}>
           <span className={styles.input_description}>Тип комнаты:</span>
@@ -33,8 +33,8 @@ export const CreateRoomModal: FC<ICreateRoomModalProps> = ({ state }) => {
           />
         </div>
       </Modal.Content>
-      <Modal.Footer centered>
-        <Button>Создать комнату</Button>
+      <Modal.Footer centered fullWidth>
+        <Button variant="primary">Создать комнату</Button>
       </Modal.Footer>
     </Modal>
   );
