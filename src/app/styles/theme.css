@@ -9,6 +9,8 @@
   --text-muted: #6e6e6e;
   --text-inverse: #ffffff;
 
+  --destructive: red;
+
   --border: #e6e6e8;
   --divider: rgba(11, 11, 12, 0.06);
   --glass-overlay: rgba(11, 11, 12, 0.03);

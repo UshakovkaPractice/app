@@ -5,4 +5,14 @@ import tsconfigPaths from "vite-tsconfig-paths";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
+  server: {
+    proxy: {
+        '/api': {
+            target: "http://138.124.14.209:8080/api/",
+            changeOrigin: true,
+            secure: false,
+            rewrite: (path) => path.replace(/^\/api/, '')
+        }
+    }
+  }
 });

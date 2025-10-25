@@ -1,92 +1,540 @@
 .wrapper {
-  display: grid;
-  grid-template-columns: 80% 20%;
-  height: 100vh;
-}
+    display: grid;
+    grid-template-columns: 80% 20%;
+    height: 100vh;
+  }
 
-.right_side {
-  display: flex;
-  flex-direction: column;
-  flex: 4;
-}
+  .right_side {
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+  }
 
-.info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px;
-}
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: var(--bg-muted);
+  }
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  background-color: var(--bg-muted);
-}
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+  }
 
-.participants {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  overflow-y: auto;
-  max-height: 400px;
-}
+  .roomInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 
-.participantCard {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 6px;
-  width: 100%;
-}
+  .roomTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+  }
 
-.info {
-  display: flex;
-  gap: 12px;
-}
+  .roomDetails {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
 
-.description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-}
+  .participantCount {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 
-.avatar {
-  border-radius: 16px;
-  width: 64px;
-  height: 64px;
-}
+  .roomId {
+    font-family: monospace;
+    background: var(--bg-muted);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
 
-.name {
-  font-weight: 500;
-  font-size: 16px;
-}
+  .headerActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-.role {
-  font-weight: 400;
-  font-size: 14px;
-  color: var(--text-muted);
-}
+  .participants {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 400px;
+  }
 
-.status {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 6px;
-}
+  .participantCard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-.chat {
-  background: var(--card-bg);
-  padding: 12px;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-1);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+  .participantCard .info {
+    display: flex;
+    gap: 6px;
+  }
 
-.chat .title {
-  font-weight: 500;
-  color: var(--text-muted);
-}
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+  }
+
+  .name {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .role {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .status {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .videoContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary);
+    position: relative;
+    min-height: 0;
+  }
+
+  .videoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+    flex: 1;
+    align-content: start;
+    overflow-y: auto;
+    min-height: 0;
+  }
+
+  .videoTile {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    min-height: 200px;
+    border: 1px solid var(--border);
+  }
+
+  .videoPlaceholder,
+  .videoOffPlaceholder {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .videoOffPlaceholder {
+    flex-direction: column;
+  }
+
+  .avatarLarge {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  .videoContent {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    position: relative;
+  }
+
+  .videoOverlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+
+  .participantName {
+    font-weight: 500;
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  .videoControls {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    gap: 8px;
+  }
+
+  .videoControls .controlButton {
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    backdrop-filter: blur(4px);
+  }
+
+  .videoControls .controlButton:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+  }
+
+  .chat {
+    background: var(--card-bg);
+    padding: 12px;
+    border-radius: var(--radius-md);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 0;
+  }
+
+  .chat .title {
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .messageBox {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .messages {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+    max-height: 500px;
+  }
+
+  .chatFunctions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .sendButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+
+  .sendButton:hover {
+    background-color: var(--bg-muted);
+  }
+
+  .sendButton:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  .conferenceControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+  }
+
+  .controlButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--bg-muted);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+
+  .controlButton:hover {
+    background: var(--bg-hover);
+    transform: scale(1.05);
+  }
+
+  .controlButton:active {
+    transform: scale(0.95);
+  }
+
+  .controlButton.muted,
+  .controlButton.videoOff {
+    background: var(--destructive);
+    color: white;
+  }
+
+  .controlButton.active {
+    background: var(--primary);
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .right_side {
+      order: 1;
+      min-height: 50vh;
+    }
+
+    .info {
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .sidebar {
+      order: 2;
+      max-height: 50vh;
+    }
+
+    .participants {
+      max-height: 200px;
+      flex-direction: row;
+      overflow-x: auto;
+      overflow-y: hidden;
+      gap: 12px;
+      padding: 8px;
+    }
+
+    .participantCard {
+      flex-direction: column;
+      align-items: center;
+      min-width: 120px;
+      padding: 8px;
+      background: var(--card-bg);
+      border-radius: var(--radius-md);
+      gap: 8px;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+    }
+
+    .name {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .role {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .status {
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .chat {
+      max-width: 100%;
+      padding: 8px;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .messageBox {
+      gap: 8px;
+    }
+
+    .messages {
+      flex: 1;
+      min-height: 0;
+      max-height: 200px;
+    }
+
+    .chatFunctions {
+      gap: 8px;
+    }
+
+    .sendButton {
+      padding: 12px;
+      min-width: 44px;
+      min-height: 44px;
+    }
+
+    .videoGrid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 12px;
+      max-height: calc(100vh - 300px);
+    }
+
+    .videoTile {
+      min-height: 200px;
+      aspect-ratio: 16/9;
+    }
+
+    .conferenceControls {
+      gap: 12px;
+      padding: 12px;
+    }
+
+    .controlButton {
+      width: 44px;
+      height: 44px;
+    }
+
+    .roomInfo {
+      gap: 2px;
+    }
+
+    .roomTitle {
+      font-size: 16px;
+    }
+
+    .roomDetails {
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .headerActions {
+      gap: 4px;
+    }
+  }
+
+  .errorContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .errorContent {
+    text-align: center;
+    background: white;
+    border-radius: 16px;
+    padding: 48px 32px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .errorIcon {
+    color: #ef4444;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .loadingSpinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid #f3f4f6;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 24px;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .errorContent h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0 0 16px 0;
+  }
+
+  .errorContent p {
+    font-size: 16px;
+    color: #6b7280;
+    margin: 0 0 32px 0;
+    line-height: 1.5;
+  }
+
+  .errorActions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .errorActions button {
+    min-width: 140px;
+  }
+
+  @media (max-width: 768px) {
+    .errorContent {
+      padding: 32px 24px;
+      margin: 20px;
+    }
+
+    .errorContent h2 {
+      font-size: 24px;
+    }
+
+    .errorActions {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .errorActions button {
+      width: 100%;
+      max-width: 200px;
+    }
+  }

@@ -1,21 +1,34 @@
-import { type PayloadAction, createSlice } from "@reduxjs/toolkit/react";
+export interface Room {
+  id: number;
+  title: string;
+  description?: string;
+  location?: string;
+  startDate: Date;
+  endDate: Date;
+}
 
-const initialState = {
-  name: "test",
-  users: [],
-  type: "public",
-  chat: [],
-};
+export interface RoomParticipant {
+  id: number;
+  name: string;
+  role: string;
+  isHost?: boolean;
+  isCoHost?: boolean;
+  avatar?: {
+    url: string;
+  };
+}
 
-export const roomSlice = createSlice({
-  name: "room",
-  initialState,
-  reducers: {
-    renameRoom: (state, action: PayloadAction<string>) => {
-      state.name = action.payload;
-    },
-    clearChat: (state) => {
-      state.chat = [];
-    },
-  },
-});
+export interface RoomMessage {
+  id: string;
+  user: RoomParticipant;
+  text: string;
+  time: Date;
+}
+
+export interface RoomState {
+  currentRoom: Room | null;
+  participants: RoomParticipant[];
+  messages: RoomMessage[];
+  loading: boolean;
+  error: string | null;
+}
